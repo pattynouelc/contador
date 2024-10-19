@@ -1,13 +1,14 @@
-//import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom/client";
+import App from "../App";
 
-// include your styles into the webpack bundle
-import "../styles/index.css";
+const rootElement = document.getElementById("root"); // Asegúrate que el ID concuerde con el del HTML
+if (rootElement) {
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<App />);
+} else {
+    console.error("No se pudo encontrar el contenedor con el id 'root'.");
+}
 
-//import your own components
-import Home from "./component/home.jsx";
 
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
 
